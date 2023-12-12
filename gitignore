@@ -1,0 +1,13 @@
+.env
+etc/
+etc/*
+*.log
+venv/
+*.txt
+Dockerfile
+*.bak
+*.service
+*.JPG
+*.crt
+*.pem
+*.cert
