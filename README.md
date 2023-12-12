@@ -1,4 +1,4 @@
-# lab_dockerized
+# lab-dockerized
 LDAP addressbook dockerized repo
 
 To use in any way:
