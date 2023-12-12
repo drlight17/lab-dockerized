@@ -1,0 +1,33 @@
+# docker compose for deploy image
+version: '3.9'
+
+services:
+  lab:
+    container_name: lab_dockerized
+    image: drlight17/lab-dockerized:latest
+    env_file: ./.env
+    ports:
+      - ${LAB_LISTEN_PORT}:${LAB_LISTEN_PORT}
+    restart: always
+    volumes:
+#      - ./addressbook:/var/www/html
+      - type: bind
+        source: ./config.php
+        target: /var/www/html/config.php
+      - type: bind
+        source: ./logo.png
+        target: /var/www/html/logo.png
+      - type: bind
+        source: ./styles_local.css
+        target: /var/www/html/styles_local.css
+
+
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+      com.docker.network.bridge.name: lab_iface

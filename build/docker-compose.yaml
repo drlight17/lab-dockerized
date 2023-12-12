@@ -1,0 +1,40 @@
+# docker compose for build image
+version: '3.9'
+
+services:
+  lab:
+    container_name: lab_dockerized
+    image: lab:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file: ./.env
+    ports:
+      - ${LAB_LISTEN_PORT}:${LAB_LISTEN_PORT}
+    restart: always
+    volumes:
+#      - ./addressbook:/var/www/html
+      - type: bind
+        source: ./config.php
+        target: /var/www/html/config.php
+      - type: bind
+        source: ./logo.png
+        target: /var/www/html/logo.png
+      - type: bind
+        source: ./styles_local.css
+        target: /var/www/html/styles_local.css
+
+#      - ./tmp:/usr/share/ldap-account-manager/tmp
+#      - ./tmp/internal:/usr/share/ldap-account-manager/tmp/internal
+#      - ./sess:/usr/share/ldap-account-manager/sess
+#      - ./config:/usr/share/ldap-account-manager/config
+
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+      com.docker.network.bridge.name: lab_iface

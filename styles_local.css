@@ -1,0 +1,120 @@
+body, table, textarea,button, input, select {
+	/*font-family: Rubik;*/
+	font-family: arial;
+}
+body::after {
+  content: "";
+  background: url(logo.png) center no-repeat #fff;
+  background-size: 30%;
+  background-blend-mode: luminosity;
+  opacity: 0.15;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;   
+}
+.search_results_viewer td, .ldap_entry_viewer_section td {
+  background-color: #f0f0f080;
+}
+hr {
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.page_footer {
+  padding-top: 5px;
+  padding-bottom: 8px;
+  width: calc(100% - 17px);
+  position: fixed;
+  background-color: #0064be!important;
+  color: #fff;
+  bottom:0;
+  height: auto;
+  font-size: 10pt;
+}
+table:not(.ldap_navigation_path_frame) a
+{
+    color: #000000;
+    text-decoration: none;
+    border-bottom: black 1px dotted;
+}
+.column_header {
+  background-color: #0064be!important;
+}
+
+.column_header {
+  color: #fff!important;
+  background-color: #0064be!important;
+}
+body > table.ldap_entry_viewer > tbody > tr > td > table > tbody > tr > th, body > form > table.ldap_entry_viewer > tbody > tr > td > table > tbody > tr > th {
+  background-color: #f0f0f080;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.search_results_viewer th > a {
+ color: #fff!important;
+ border-bottom: #fff 1px dotted;
+}
+.page_footer a {
+  color: #fff!important;
+  border-bottom: white 1px dotted;
+  text-decoration: none;
+}
+
+thead > tr, th {
+  height: 30px;
+}
+.object_class_icon {
+  padding-right: 10px!important;
+  padding-left: 10px!important;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.object_class_icon > img[title="user"], body > table.ldap_navigation_path_frame > tbody > tr > td > ul > li > img[title="user"] {
+  object-fit:cover;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+ .ldap_attribute_jpegPhoto > img {
+  object-fit:cover;
+  border-radius: 50%;
+  /*max-width: 180px;
+  max-height: 180px;
+  width: 100%;*/
+  width: 180px;
+  height: 180px;
+  /*height: auto;*/
+  display: block;
+}
+body > table.ldap_navigation_path_frame > tbody > tr > td:nth-child(1) > ul > li:nth-child(1) > a {
+  color: black;
+  font-size: 17pt;
+}
+.ldap_navigation_path li img {
+  max-width: 48px;
+}
+.ldap_navigation_path_frame a {
+  color: black;
+}
+
+#filter {
+  border-radius: 20px;
+  border: 2px solid #eee;
+}
+.login_info, .server_info, .ldap_navigation_path li img, table.ldap_navigation_path_frame > tbody > tr > td  a {
+  vertical-align: middle;
+  border-radius: 50%;
+}
+@media (max-width: 1200px) {
+    .search th, .ldap_navigation_path {
+	white-space: break-spaces;
+    }
+}
+#object_class_selector-button {
+  pointer-events: none;
+}
+body > form > p:nth-child(6) {
+  display:none;
+}
