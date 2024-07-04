@@ -2,7 +2,7 @@
 FROM ubuntu:20.04
 RUN apt update
 RUN DEBIAN_FRONTEND=noninteractive TZ=Europe/Moscow apt-get -y install tzdata
-RUN apt install mc net-tools nginx php-common php-fpm php-ldap php php-opcache php-xml php-xmlreader php-xmlwriter php-gd php-json php-gmp php-zip php-iconv php-intl php-mbstring -y
+RUN apt install language-pack-ru mc net-tools nginx php-common php-fpm php-ldap php php-opcache php-xml php-xmlreader php-xmlwriter php-gd php-json php-gmp php-zip php-iconv php-intl php-mbstring -y
 # change TZ to your needs
 #RUN ln -s /usr/share/zoneinfo/Europe/Moscow /etc/localtime
 WORKDIR /
